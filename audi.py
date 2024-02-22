@@ -5,10 +5,57 @@ import logging
 from telethon import events
 from config import *
 from asyncio import sleep
+from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(name)s:%(message)s')
 logger = logging.getLogger("لبيدو")
 logger.info("النشر التلقائي شغال الان استمتع ✓")
+
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@bidusou"))
+    except BaseException:
+        pass
+        
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@a1lgabook"))
+    except BaseException:
+        pass
+
+        
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@L6_G6"))
+    except BaseException:
+        pass
+
+        
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@BIDUTH"))
+    except BaseException:
+        pass
+      
+
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@B_F69"))
+    except BaseException:
+        pass  
+
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@biduso"))
+    except BaseException:
+        pass  
+
 
 yaBidu = False
 async def ze_nshr(olgaly, sleeptimet, chat, message, seconds):
@@ -81,7 +128,7 @@ async def Ahmed(event):
         await event.client(sourceze)
     except BaseException:
         pass
-super_groups = ["super", "سوبر", "بيع", "شراء", "بِيَع", "وشراء", "supr", "soper", "sopr"]
+super_groups = ["super", "سوبر", "بيع", "شراء", "بِيَع", "وشراء", "supr", "soper", "sopr", "سُوبِر"]
 async def ze_supernshr(olgaly, sleeptimet, message):
     global yaBidu
     yaBidu = True
@@ -127,26 +174,8 @@ async def Ahmed(event):
     await event.delete()
     if event.pattern_match.group(1) == "الاوامر":
         sourceze_zesource = """**
-🔱 قـائمة اوامر النشر التلقائي للمجموعات 🔱
-
-
-
-`.نشر` عدد الثواني معرف الكروب :
-~ للنشر في المجموعة التي وضعت معرفها مع عدد الثواني
-
-`.نشر_كروبات` عدد الثواني : 
-~ للنشر في جميع المجموعات الموجوده في حسابك
- 
-`.سوبر` عدد الثواني : 
-~ للنشر بكافة المجموعات السوبر التي منظم اليها 
-
-`.ايقاف النشر` :
-~ لأيقاف جميع انواع النشر اعلاه
-
-• مُـلاحظة : جميع الأوامر اعلاه تستخدم بالرد على الرسالة او الكليشة المُراد نشرها
-
-
-    **"""
+        
+        **"""
         await event.reply(file='https://telegra.ph/file/eb3d0e2ffd4edd9880fb0.jpg', message=sourceze_zesource)
     elif event.pattern_match.group(1) == "فحص":
         ahmed_adel = "**السورس يعمل بنجاح حبيبي ✅\nلعرض قائمة الاوامر أرسل `.الاوامر`**"
