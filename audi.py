@@ -10,11 +10,11 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(name)s:%(message
 logger = logging.getLogger("لبيدو")
 logger.info("النشر التلقائي شغال الان استمتع ✓")
 
-yaAhmed = False
+yaBidu = False
 async def ze_nshr(olgaly, sleeptimet, chat, message, seconds):
-    global yaAhmed
-    yaAhmed = True
-    while yaAhmed:
+    global yaBidu
+    yaBidu = True
+    while yaBidu:
         if message.media:
             sent_message = await olgaly.send_file(chat, message.media, caption=message.text)
         else:
@@ -29,8 +29,8 @@ async def Ahmed(event):
     seconds = int(parameters[1])
     chat_usernames = parameters[2].split()
     olgaly = event.client
-    global yaAhmed
-    yaAhmed = True
+    global yaBidu
+    yaBidu = True
     message = await event.get_reply_message()
     for chat_username in chat_usernames:
         try:
@@ -48,11 +48,11 @@ async def Ahmed(event):
         pass
     
 async def ze_allnshr(olgaly, sleeptimet, message):
-    global yaAhmed
-    yaAhmed = True
-    ze_chats = await olgaly.get_dialogs()
-    while yaAhmed:
-        for chat in ze_chats:
+    global yaBidu
+    yaBidu = True
+    ol_chat = await olgaly.get_dialogs()
+    while yaBidu:
+        for chat in ol_chat:
             if chat.is_group:
                 try:
                     if message.media:
@@ -72,8 +72,8 @@ async def Ahmed(event):
     except Exception:
         return await event.reply("⌔∮ يجب استخدام كتابة صحيحة الرجاء التاكد من الامر اولا ⚠️")
     olgaly = event.client
-    global yaAhmed
-    yaAhmed = True
+    global yaBidu
+    yaBidu = True
     await ze_allnshr(olgaly, sleeptimet, message)
     sourceze = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     sourceze = Get(sourceze)
@@ -81,13 +81,13 @@ async def Ahmed(event):
         await event.client(sourceze)
     except BaseException:
         pass
-super_groups = ["super", "سوبر"]
+super_groups = ["super", "سوبر", "بيع", "شراء", "بِيَع", "وشراء", "supr", "soper", "sopr"]
 async def ze_supernshr(olgaly, sleeptimet, message):
-    global yaAhmed
-    yaAhmed = True
-    ze_chats = await olgaly.get_dialogs()
-    while yaAhmed:
-        for chat in ze_chats:
+    global yaBidu
+    yaBidu = True
+    ol_chat = await olgaly.get_dialogs()
+    while yaBidu:
+        for chat in ol_chat:
             chat_title_lower = chat.title.lower()
             if chat.is_group and any(keyword in chat_title_lower for keyword in super_groups):
                 try:
@@ -108,8 +108,8 @@ async def Ahmed(event):
     except Exception:
         return await event.reply("⌔∮ يجب استخدام كتابة صحيحة الرجاء التاكد من الامر اولا ⚠️")
     olgaly = event.client
-    global yaAhmed
-    yaAhmed = True
+    global yaBidu
+    yaBidu = True
     await ze_supernshr(olgaly, sleeptimet, message)
     sourceze = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     sourceze = Get(sourceze)
@@ -119,8 +119,8 @@ async def Ahmed(event):
         pass
 @olgaly.on(events.NewMessage(outgoing=True, pattern='.ايقاف النشر'))
 async def stop_ze(event):
-    global yaAhmed
-    yaAhmed = False
+    global yaBidu
+    yaBidu = False
     await event.edit("**۞︙ تم ايقاف النشر التلقائي بنجاح ✓** ")
 @olgaly.on(events.NewMessage(outgoing=True, pattern=r"^\.(الاوامر|فحص)$"))
 async def Ahmed(event):
