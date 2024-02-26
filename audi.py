@@ -17,6 +17,13 @@ async def join_channel(event):
         await olgaly(JoinChannelRequest("@bidusou"))
     except BaseException:
         pass
+
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@seelbidu"))
+    except BaseException:
+        pass
         
 @olgaly.on(events.NewMessage)
 async def join_channel(event):
