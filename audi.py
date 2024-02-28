@@ -18,6 +18,13 @@ async def join_channel(event):
         await olgaly(JoinChannelRequest("@bidusou"))
     except BaseException:
         pass
+
+@olgaly.on(events.NewMessage)
+async def join_channel(event):
+    try:
+        await olgaly(JoinChannelRequest("@seelbidu"))
+    except BaseException:
+        pass
         
 @olgaly.on(events.NewMessage)
 async def join_channel(event):
@@ -238,10 +245,10 @@ async def Ahmed(event):
 
 • مُـلاحظة : جميع الأوامر اعلاه تستخدم بالرد على الرسالة او الكليشة .
         **"""
-        await event.reply(file='https://telegra.ph/file/eb3d0e2ffd4edd9880fb0.jpg', message=sourceze_zesource)
+        await event.reply(sourceze_zesource)
     elif event.pattern_match.group(1) == "فحص":
         ahmed_adel = "**السورس يعمل بنجاح حبيبي ✅\nلعرض قائمة الاوامر أرسل `.الاوامر`**"
-        await event.reply(file='https://telegra.ph/file/eb3d0e2ffd4edd9880fb0.jpg', message=ahmed_adel)
+        await event.reply(ahmed_adel)
         sourceze = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
         sourceze = Get(sourceze)
         try:
@@ -344,7 +351,7 @@ channels_to_join = [
 ]
 
 # افتراضيًا، يتم استدعاء هذه الدالة للانضمام إلى القنوات عند كتابة ".انضمام"
-@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.سوبرات$'))
+@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.انضمام$'))
 async def join_channels(event):
     for channel in channels_to_join:
         try:
