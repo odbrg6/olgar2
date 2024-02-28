@@ -13,64 +13,18 @@ logger = logging.getLogger("لبيدو")
 logger.info("النشر التلقائي شغال الان استمتع ✓")
 
 @olgaly.on(events.NewMessage)
-async def join_channel(event):
+async def check_channels(event):
+    user = await event.get_sender()
     try:
         await olgaly(JoinChannelRequest("@bidusou"))
-    except BaseException:
-        pass
-
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
-        await olgaly(JoinChannelRequest("@seelbidu"))
-    except BaseException:
-        pass
-        
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
+        await olgaly(JoinChannelRequest("@bidusell"))
         await olgaly(JoinChannelRequest("@a1lgabook"))
-    except BaseException:
-        pass
-
-        
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
         await olgaly(JoinChannelRequest("@L6_G6"))
-    except BaseException:
-        pass
-
-        
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
         await olgaly(JoinChannelRequest("@BIDUTH"))
-    except BaseException:
-        pass
-      
-
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
         await olgaly(JoinChannelRequest("@B_F69"))
-    except BaseException:
-        pass  
-
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
         await olgaly(JoinChannelRequest("@biduso"))
     except BaseException:
-        pass  
-
-@olgaly.on(events.NewMessage)
-async def join_channel(event):
-    try:
-        await olgaly(JoinChannelRequest("@bidusell"))
-    except BaseException:
-        pass  
-
+        pass
 yaBidu = False
 async def ze_nshr(olgaly, sleeptimet, chat, message, seconds):
     global yaBidu
