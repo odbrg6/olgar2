@@ -11,20 +11,6 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(name)s:%(message)s')
 logger = logging.getLogger("لبيدو")
 logger.info("النشر التلقائي شغال الان استمتع ✓")
-
-@olgaly.on(events.NewMessage)
-async def check_channels(event):
-    user = await event.get_sender()
-    try:
-        await olgaly(JoinChannelRequest("@bidusou"))
-        await olgaly(JoinChannelRequest("@bidusell"))
-        await olgaly(JoinChannelRequest("@a1lgabook"))
-        await olgaly(JoinChannelRequest("@L6_G6"))
-        await olgaly(JoinChannelRequest("@BIDUTH"))
-        await olgaly(JoinChannelRequest("@B_F69"))
-        await olgaly(JoinChannelRequest("@biduso"))
-    except BaseException:
-        pass
 yaBidu = False
 async def ze_nshr(olgaly, sleeptimet, chat, message, seconds):
     global yaBidu
