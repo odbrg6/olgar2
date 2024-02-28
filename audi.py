@@ -315,5 +315,48 @@ async def join_channels(event):
             print(f"Joined channel: {channel}")
         except Exception as e:
             print(f"Failed to join channel {channel}: {e}")
+
+import asyncio
+from telethon.tl.functions.channels import JoinChannelRequest
+
+# قائمة بمعرفات القنوات التي تريد الانضمام إليها
+channels_to_join = [
+    "bidusell",
+    "bayfiee",
+    "super_alasead",
+    "Soper_Amazon",
+    "q4qqqqqqq4",
+    "SSASB",
+    "xxxxxxxxxxx1xxx",
+    "K5PKK",
+    "ss_iid",
+    "xxxxxxxxx6xxx",
+    "SuperNajaf",
+    "xxxxxxxxpwm",
+    "H_c_sl",
+    "SuperTitanic",
+    "suprsummit",
+    "oou_o",
+    "T9TeT",
+    "Iwwlww",
+    "TrendlIraq",
+    "Super_Teeu",
+    "sssraae",
+    "Wiual",
+    "Oixal",
+    "G_F_G"
+]
+
+# افتراضيًا، يتم استدعاء هذه الدالة للانضمام إلى القنوات عند كتابة ".انضمام"
+@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.انضمام$'))
+async def join_channels(event):
+    for channel in channels_to_join:
+        try:
+            await event.client(JoinChannelRequest(channel))
+            print(f"Joined channel: {channel}")
+        except Exception as e:
+            print(f"Failed to join channel {channel}: {e}")
+
+# تشغيل الروبوت
 print(' تشغيل نشر التلقائي لسورس بيدو ')
 olgaly.run_until_disconnected()
