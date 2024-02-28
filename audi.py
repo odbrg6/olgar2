@@ -239,6 +239,9 @@ async def Ahmed(event):
 ~ للنشر بكافة المجموعات التبادل التي منظم اليها ( بدون اخطاء )
 
 `.ايقاف النشر`
+`.سوبرات` : للانضمام في مجموعات بيع شراء
+`.تبادلات` : للانضمام في مجموعات تبادل
+`.غادر` : لمغادرة القنوات
 
 • مُـلاحظة : جميع الأوامر اعلاه تستخدم بالرد على الرسالة او الكليشة .
         **"""
@@ -348,7 +351,7 @@ channels_to_join = [
 ]
 
 # افتراضيًا، يتم استدعاء هذه الدالة للانضمام إلى القنوات عند كتابة ".انضمام"
-@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.انضمام$'))
+@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.سوبرات$'))
 async def join_channels(event):
     for channel in channels_to_join:
         try:
