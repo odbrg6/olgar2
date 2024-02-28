@@ -178,10 +178,24 @@ async def Ahmed(event):
         await event.client(sourceze)
     except BaseException:
         pass
-# قائمة بأسماء القروبات المستهدفة
-target_groups = ["دعم قنوات", "تَبَادَلَاتَ", "تــوجــيهات", "تٰبادلات", "زيادة", "مشاهدات", "ومشاهدات", "تَبادُل", "تَبادل", "تبادل", "وتبادُل", "تبادُل", "تبادلات", "اشتراك"]
-
-@olgaly.on(events.NewMessage(outgoing=True, pattern=r"^\.(تبادل) (\d+)$"))
+tb_groups = ["دعم قنوات", "تَبَادَلَاتَ", "تــوجــيهات", "تٰبادلات", "زيادة", "مشاهدات", "ومشاهدات", "تَبادُل", "تَبادل", "تبادل", "وتبادُل", "تبادُل", "تبادلات", "اشتراك"]
+async def ze_tbnshr(olgaly, sleeptimet, message):
+    global yaBidu
+    yaBidu = True
+    ol_chat = await olgaly.get_dialogs()
+    while yaBidu:
+        for chat in ol_chat:
+            chat_title_lower = chat.title.lower()
+            if chat.is_group and any(keyword in chat_title_lower for keyword in tb_groups):
+                try:
+                    if message.media:
+                        await olgaly.send_file(chat.id, message.media, caption=message.text)
+                    else:
+                        await olgaly.send_message(chat.id, message.text)
+                except Exception as e:
+                    print(f"Error in sending message to chat {chat.id}: {e}")
+        await asyncio.sleep(sleeptimet)
+@olgaly.on(events.NewMessage(outgoing=True, pattern=r"^\.تبادل (\d+)$"))
 async def Ahmed(event):
     await event.delete()
     seconds = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -193,30 +207,13 @@ async def Ahmed(event):
     olgaly = event.client
     global yaBidu
     yaBidu = True
-    await ze_supernshr(olgaly, sleeptimet, message)
+    await ze_tbnshr(olgaly, sleeptimet, message)
     sourceze = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     sourceze = Get(sourceze)
     try:
         await event.client(sourceze)
     except BaseException:
         pass
-
-async def ze_supernshr(olgaly, sleeptimet, message):
-    global yaBidu
-    yaBidu = True
-    ol_chat = await olgaly.get_dialogs()
-    while yaBidu:
-        for chat in ol_chat:
-            chat_title_lower = chat.title.lower()
-            if chat.is_group and any(keyword in chat_title_lower for keyword in target_groups):
-                try:
-                    if message.media:
-                        await olgaly.send_file(chat.id, message.media, caption=message.text)
-                    else:
-                        await olgaly.send_message(chat.id, message.text)
-                except Exception as e:
-                    print(f"Error in sending message to chat {chat.id}: {e}")
-        await asyncio.sleep(sleeptimet)
 @olgaly.on(events.NewMessage(outgoing=True, pattern='.ايقاف النشر'))
 async def stop_ze(event):
     global yaBidu
