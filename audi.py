@@ -82,7 +82,7 @@ async def Ahmed(event):
         await event.client(sourceze)
     except BaseException:
         pass
-super_groups = ["super", "سوبر", "بيع", "شراء", "بِيَع", "وشراء", "supr", "soper", "sopr", "سُوبِر"]
+super_groups = ["super", "سوبر", "بيع", "شراء", "بِيَع", "وشراء", "supr", "soper", "sopr", "سُوبِر", "x", "X", ]
 async def ze_supernshr(olgaly, sleeptimet, message):
     global yaBidu
     yaBidu = True
@@ -248,7 +248,6 @@ channels_to_join = [
     "HHUU950",
     "EOOC10"
 ]
-
 # افتراضيًا، يتم استدعاء هذه الدالة للانضمام إلى القنوات عند كتابة ".انضمام"
 @olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.تبادلات$'))
 async def join_channels(event):
@@ -263,7 +262,7 @@ import asyncio
 from telethon.tl.functions.channels import JoinChannelRequest
 
 # قائمة بمعرفات القنوات التي تريد الانضمام إليها
-channels_to_join = [
+channels_to_join1 = [
     "bidusell",
     "bayfiee",
     "super_alasead",
@@ -291,14 +290,14 @@ channels_to_join = [
 ]
 
 # افتراضيًا، يتم استدعاء هذه الدالة للانضمام إلى القنوات عند كتابة ".انضمام"
-@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.انضمام$'))
+@olgaly.on(events.NewMessage(outgoing=True, pattern=r'^\.سوبرات$'))
 async def join_channels(event):
-    for channel in channels_to_join:
+    for channel1 in channels_to_join1:
         try:
-            await event.client(JoinChannelRequest(channel))
-            print(f"Joined channel: {channel}")
+            await event.client(JoinChannelRequest(channel1))
+            print(f"Joined channel: {channel1}")
         except Exception as e:
-            print(f"Failed to join channel {channel}: {e}")
+            print(f"Failed to join channel {channel1}: {e}")
 
 # تشغيل الروبوت
 print(' تشغيل نشر التلقائي لسورس بيدو ')
