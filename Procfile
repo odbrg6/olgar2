@@ -1,1 +1,1 @@
-worker: python3 audi.py
+web: python3 audi.py
